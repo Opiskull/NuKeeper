@@ -2,9 +2,10 @@ using System;
 using McMaster.Extensions.CommandLineUtils;
 using NuKeeper.Configuration;
 using NuKeeper.Engine;
+using NuKeeper.Engine.Github;
 using NuKeeper.Inspection.Logging;
 
-namespace NuKeeper.Commands
+namespace NuKeeper.Commands.Github
 {
     [Command(Description = "Performs version checks and generates pull requests for a single repository on GitHub.")]
     internal class RepositoryCommand : GitHubNuKeeperCommand

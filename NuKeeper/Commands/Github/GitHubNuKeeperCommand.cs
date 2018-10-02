@@ -3,10 +3,11 @@ using System.Threading.Tasks;
 using McMaster.Extensions.CommandLineUtils;
 using NuKeeper.Configuration;
 using NuKeeper.Engine;
+using NuKeeper.Engine.Github;
 using NuKeeper.Inspection.Logging;
 using NuKeeper.Inspection.Report;
 
-namespace NuKeeper.Commands
+namespace NuKeeper.Commands.Github
 {
     internal abstract class GitHubNuKeeperCommand : CommandBase
     {

@@ -11,5 +11,7 @@ namespace NuKeeper.Configuration
         public UserSettings UserSettings { get; set; }
 
         public FilterSettings PackageFilters { get; set; }
+
+        public AzureDevOpsAuthSettings AzureDevOpsAuthSettings { get; set; }
     }
 }

@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using NuKeeper.GitHub;
 using Octokit;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public static class GitHubExtensions
     {

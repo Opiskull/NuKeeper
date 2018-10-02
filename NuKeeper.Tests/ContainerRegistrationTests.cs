@@ -3,6 +3,8 @@ using NuKeeper.Commands;
 using NUnit.Framework;
 using NuKeeper.Engine;
 using NuKeeper.Local;
+using NuKeeper.Commands.Github;
+using NuKeeper.Engine.Github;
 
 namespace NuKeeper.Tests
 {

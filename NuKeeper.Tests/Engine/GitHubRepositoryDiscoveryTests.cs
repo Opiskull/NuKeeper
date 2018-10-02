@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using NSubstitute;
 using NuKeeper.Configuration;
 using NuKeeper.Engine;
+using NuKeeper.Engine.Github;
 using NuKeeper.GitHub;
 using NuKeeper.Inspection.Logging;
 using NUnit.Framework;

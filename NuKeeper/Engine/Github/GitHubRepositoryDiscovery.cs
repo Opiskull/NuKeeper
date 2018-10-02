@@ -7,7 +7,7 @@ using NuKeeper.GitHub;
 using NuKeeper.Inspection.Logging;
 using Octokit;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public class GitHubRepositoryDiscovery : IGitHubRepositoryDiscovery
     {

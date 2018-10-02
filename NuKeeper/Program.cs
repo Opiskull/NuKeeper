@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using McMaster.Extensions.CommandLineUtils;
 using NuKeeper.Commands;
+using NuKeeper.Commands.Github;
 
 [assembly:InternalsVisibleTo("NuKeeper.Tests")]
 

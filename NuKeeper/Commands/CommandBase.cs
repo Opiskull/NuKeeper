@@ -27,7 +27,7 @@ namespace NuKeeper.Commands
         // ReSharper disable once MemberCanBePrivate.Global
         protected string[] Source { get; }
 
-        protected NuGetSources NuGetSources => Source == null?  null : new NuGetSources(Source);
+        protected NuGetSources NuGetSources => Source == null ? null : new NuGetSources(Source);
 
         [Option(CommandOptionType.SingleValue, ShortName = "v", LongName = "verbosity",
             Description = "Sets the verbosity level of the command. Allowed values are q[uiet], m[inimal], n[ormal], d[etailed].")]
@@ -42,7 +42,7 @@ namespace NuKeeper.Commands
                 "Exclude updates that do not meet a minimum age, in order to not consume packages immediately after they are released. Examples: 0 = zero, 12h = 12 hours, 3d = 3 days, 2w = two weeks. The default is 7 days.")]
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         // ReSharper disable once MemberCanBePrivate.Global
-        protected string MinimumPackageAge { get; } 
+        protected string MinimumPackageAge { get; }
 
         [Option(CommandOptionType.SingleValue, ShortName = "i", LongName = "include", Description = "Only consider packages matching this regex pattern.")]
         public string Include { get; set; }
@@ -153,10 +153,8 @@ namespace NuKeeper.Commands
             }
             catch (Exception ex)
             {
-                {
-                    return ValidationResult.Failure(
-                        $"Unable to parse regex '{value}' for Include: {ex.Message}");
-                }
+                return ValidationResult.Failure(
+                    $"Unable to parse regex '{value}' for Include: {ex.Message}");
             }
 
             return ValidationResult.Success;
@@ -180,10 +178,8 @@ namespace NuKeeper.Commands
             }
             catch (Exception ex)
             {
-                {
-                    return ValidationResult.Failure(
-                        $"Unable to parse regex '{value}' for Exclude: {ex.Message}");
-                }
+                return ValidationResult.Failure(
+                    $"Unable to parse regex '{value}' for Exclude: {ex.Message}");
             }
 
             return ValidationResult.Success;

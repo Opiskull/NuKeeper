@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using NuKeeper.Configuration;
+using NuKeeper.Engine.Github;
 using NuKeeper.Git;
 using NuKeeper.GitHub;
 using NuKeeper.Inspection.Logging;

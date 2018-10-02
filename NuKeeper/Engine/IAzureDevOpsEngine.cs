@@ -3,7 +3,7 @@ using NuKeeper.Configuration;
 
 namespace NuKeeper.Engine
 {
-    public interface IGitHubEngine
+    public interface IAzureDevOpsEngine
     {
         Task<int> Run(SettingsContainer settings);
     }

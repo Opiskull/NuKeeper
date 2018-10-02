@@ -2,7 +2,7 @@ using LibGit2Sharp;
 using NuKeeper.Configuration;
 using System.Threading.Tasks;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public interface IGitHubRepositoryEngine
     {

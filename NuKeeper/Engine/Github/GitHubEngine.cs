@@ -8,7 +8,7 @@ using NuKeeper.Inspection.Formats;
 using NuKeeper.Inspection.Logging;
 using Octokit;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public class GitHubEngine : IGitHubEngine
     {

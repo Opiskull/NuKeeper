@@ -27,4 +27,7 @@
       <PackagePath>tools\netcoreapp2.1\any\NuGet.exe</PackagePath>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\AzureDevOps\" />
+  </ItemGroup>
 </Project>

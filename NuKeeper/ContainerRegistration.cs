@@ -1,5 +1,6 @@
 using NuKeeper.Configuration;
 using NuKeeper.Engine;
+using NuKeeper.Engine.Github;
 using NuKeeper.Engine.Packages;
 using NuKeeper.GitHub;
 using NuKeeper.Local;

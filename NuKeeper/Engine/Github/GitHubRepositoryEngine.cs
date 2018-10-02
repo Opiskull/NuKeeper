@@ -6,7 +6,7 @@ using NuKeeper.Git;
 using NuKeeper.Inspection.Files;
 using NuKeeper.Inspection.Logging;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public class GitHubRepositoryEngine: IGitHubRepositoryEngine
     {

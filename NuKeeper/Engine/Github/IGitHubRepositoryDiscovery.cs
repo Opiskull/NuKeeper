@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using NuKeeper.Configuration;
 using NuKeeper.GitHub;
 
-namespace NuKeeper.Engine
+namespace NuKeeper.Engine.Github
 {
     public interface IGitHubRepositoryDiscovery
     {
