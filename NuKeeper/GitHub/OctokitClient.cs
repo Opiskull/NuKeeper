@@ -168,5 +168,24 @@ namespace NuKeeper.GitHub
                 }
             }
         }
+
+        public async Task CreatePullRequest(RepositoryData repository, string title, string body, string branchWithChanges, IEnumerable<string> labels)
+        {
+            CheckInitialised();
+
+            string qualifiedBranch;
+            if (repository.Pull.Owner == repository.Push.Owner)
+            {
+                qualifiedBranch = branchWithChanges;
+            }
+            else
+            {
+                qualifiedBranch = repository.Push.Owner + ":" + branchWithChanges;
+            }
+
+            var pr = new NewPullRequest(title, qualifiedBranch, repository.DefaultBranch) { Body = body };
+
+            await OpenPullRequest(repository.Pull, pr, labels);
+        }
     }
 }

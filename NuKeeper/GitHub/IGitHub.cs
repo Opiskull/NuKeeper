@@ -6,7 +6,7 @@ using Octokit;
 
 namespace NuKeeper.GitHub
 {
-    public interface IGitHub
+    public interface IGitHub : IPullRequestCreator
     {
         void Initialise(GithubAuthSettings settings);
 

@@ -14,16 +14,16 @@ namespace NuKeeper.Engine.Packages
 {
     public class PackageUpdater : IPackageUpdater
     {
-        private readonly IGitHub _gitHub;
+        private readonly IPullRequestCreator _pullRequestCreator;
         private readonly INuKeeperLogger _logger;
         private readonly IUpdateRunner _updateRunner;
 
         public PackageUpdater(
-            IGitHub gitHub,
+            IPullRequestCreator pullRequestCreator,
             IUpdateRunner localUpdater,
             INuKeeperLogger logger)
         {
-            _gitHub = gitHub;
+            _pullRequestCreator = pullRequestCreator;
             _updateRunner = localUpdater;
             _logger = logger;
         }
@@ -84,7 +84,7 @@ namespace NuKeeper.Engine.Packages
 
             var title = CommitWording.MakePullRequestTitle(updates);
             var body = CommitWording.MakeCommitDetails(updates);
-            await _gitHub.CreatePullRequest(repository, title, body, branchName,
+            await _pullRequestCreator.CreatePullRequest(repository, title, body, branchName,
                 settings.SourceControlServerSettings.Labels);
 
             git.Checkout(repository.DefaultBranch);

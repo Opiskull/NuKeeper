@@ -79,7 +79,7 @@ namespace NuKeeper.Tests.Engine
         public async Task WhenThereAreUpdates_CountIsAsExpected(int numberOfUpdates, bool consolidateUpdates, int expectedUpdates, int expectedPrs)
         {
             var updateSelection = Substitute.For<IPackageUpdateSelection>();
-            var gitHub = Substitute.For<IGitHub>();
+            var gitHub = Substitute.For<IPullRequestCreator>();
             var gitDriver = Substitute.For<IGitDriver>();
             UpdateSelectionAll(updateSelection);
 
@@ -103,9 +103,11 @@ namespace NuKeeper.Tests.Engine
             Assert.That(count, Is.EqualTo(expectedUpdates));
 
             await gitHub.Received(expectedPrs)
-                .OpenPullRequest(
-                    Arg.Any<ForkData>(),
-                    Arg.Any<NewPullRequest>(),
+                .CreatePullRequest(
+                    Arg.Any<RepositoryData>(),
+                    Arg.Any<string>(),
+                    Arg.Any<string>(),
+                    Arg.Any<string>(),
                     Arg.Any<IEnumerable<string>>());
 
             gitDriver.Received(numberOfUpdates)

@@ -40,6 +40,7 @@ namespace NuKeeper
             container.Register<IFileSettingsCache, FileSettingsCache>();
 
             container.RegisterSingleton<IGitHub, OctokitClient>();
+            container.RegisterSingleton<IPullRequestCreator, OctokitClient>();
         }
     }
 }
